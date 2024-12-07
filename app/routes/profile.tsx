@@ -5,10 +5,10 @@ const MyProfile = () =>{
                 My Profile
             </strong>
             <h1>
-            Sarawut Rungwongwat
+            Name : Sarawut Rungwongwat
             </h1>
             <h1>
-            026740491607-9
+            Student Code : 026740491607-9
             </h1>
             <MyEducation />
         </div>
