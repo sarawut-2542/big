@@ -1,7 +1,7 @@
 const myBlogs = () => {
     let title = 'EP2'
     let rating = 5
-    let descriptTion = 'เกี่ยวกัยตัวฉัน'
+    let descriptTion = 'เกี่ยวกับตัวฉัน'
 
   
 

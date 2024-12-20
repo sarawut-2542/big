@@ -16,7 +16,7 @@ const ToDolists = () => {
                     <CompletedCheck c={item.completed}/>
                 </b>
                 <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                {item.title+"(รหัส:"+item.id+")"}</h5>
+                {item.title+"(รหัส: "+item.id+" )"}</h5>
                 <p className="font-normal text-gray-700 dark:text-gray-400">
                 {item.created} </p>
             </a>
