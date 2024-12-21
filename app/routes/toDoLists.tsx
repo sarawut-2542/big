@@ -17,7 +17,7 @@ export const toDoItem = [
     id: 3,
     title: "กิจกรรรมรึเปล่า",
     created: formattedDateTime,
-    completed: true
+    completed: false
 }
 
 

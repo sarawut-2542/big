@@ -1,4 +1,6 @@
 import { toDoItem } from "./toDoLists";
+import MyFooter from "./templates/myfooter";
+import MyMenu from "./templates/mymenu";
 
 const CompletedCheck = ({ c }: { c: boolean }) => {
     return c ? <span>{'😚'}</span> : <span>{'🤢'}</span>;
@@ -6,7 +8,7 @@ const CompletedCheck = ({ c }: { c: boolean }) => {
 
 const ToDolists = () => {
     const cpToDoItems = toDoItem.filter(cpToDo =>
-        cpToDo.completed === true
+        cpToDo.completed === false
     )
     const listItems = cpToDoItems.map((item, index) =>         
                     <div className="m-3" key={index}>
@@ -27,10 +29,12 @@ const ToDolists = () => {
       
     return (
         <div className ="m-3">  
-        <h1 className="text-x1">
-            สิ่งที่ต้องทำ
-        </h1>
+        <MyMenu />
+        <strong className="text-x1">
+            สิ่งที่ต้องทำ...
+        </strong>
         {listItems}
+        <MyFooter />
         </div>
     );
     
