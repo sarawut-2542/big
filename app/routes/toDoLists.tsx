@@ -5,13 +5,13 @@ export const toDoItem = [
     id: 1,
     title: "กิจกรรรมจ้า",
     created: formattedDateTime,
-    completed: true
+    completed: false
 },
 {    
     id: 2,
     title: "กิจกรรรมจ๊ะเอ๋",
     created: formattedDateTime,
-    completed: true
+    completed: false
 },
 {    
     id: 3,

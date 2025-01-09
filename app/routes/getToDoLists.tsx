@@ -31,7 +31,7 @@ const ToDolists = () => {
         <div className ="m-3">  
         <MyMenu />
         <strong className="text-x1">
-            สิ่งที่ต้องทำ...
+            สิ่งที่ต้องทำ.
         </strong>
         {listItems}
         <MyFooter />
