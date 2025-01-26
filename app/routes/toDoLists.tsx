@@ -5,19 +5,19 @@ export const toDoItem = [
     id: 1,
     title: "กิจกรรรมจ้า",
     created: formattedDateTime,
-    completed: false
+    completed: true
 },
 {    
     id: 2,
     title: "กิจกรรรมจ๊ะเอ๋",
     created: formattedDateTime,
-    completed: false
+    completed: true
 },
 {    
     id: 3,
     title: "กิจกรรรมรึเปล่า",
     created: formattedDateTime,
-    completed: false
+    completed: true
 }
 
 

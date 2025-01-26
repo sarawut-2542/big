@@ -8,7 +8,7 @@ const CompletedCheck = ({ c }: { c: boolean }) => {
 
 const ToDolists = () => {
     const cpToDoItems = toDoItem.filter(cpToDo =>
-        cpToDo.completed === false
+        cpToDo.completed === true
     )
     const listItems = cpToDoItems.map((item, index) =>         
                     <div className="m-3" key={index}>
