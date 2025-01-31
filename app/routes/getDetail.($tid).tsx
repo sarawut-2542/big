@@ -19,7 +19,7 @@ const GetDetail = () => {
   useEffect(() => {
     if (tdItem.length === 0) {
       handleNotFound();
-    }
+    } // ถ้า tdItem.length ส่งมาเป็น 0 จะทำการ redirect ไปที่ ไฟล์ pageNotFound
   }, [tdItem.length]); // เมื่อ tdItem.length เปลี่ยนแปลง จะเช็คเงื่อนไขนี้
 
   return (
