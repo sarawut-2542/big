@@ -3,19 +3,19 @@ const formattedDateTime = new Date().toLocaleString('th-TH', { hour12: false });
 export const toDoItem = [
     {    
     id: 1,
-    title: "กิจกรรรมจ้า",
+    title: "เรียนเช้า",
     created: formattedDateTime,
     completed: true
 },
 {    
     id: 2,
-    title: "กิจกรรรมจ๊ะเอ๋",
+    title: "เรียนบ่าย",
     created: formattedDateTime,
     completed: true
 },
 {    
     id: 3,
-    title: "กิจกรรรมรึเปล่า",
+    title: "เรียนเย็น",
     created: formattedDateTime,
     completed: true
 }
