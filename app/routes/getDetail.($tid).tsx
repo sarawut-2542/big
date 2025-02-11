@@ -10,7 +10,7 @@ const GetDetail = () => {
   const tid = myParams.tid || "ไม่มี ID";
   const navigate = useNavigate();
 
-  const tdItem = toDoItem.filter((item) => item.id == tid);
+  const tdItem = toDoItem.filter((item) => item.id == Number (tid));
 
   function handleNotFound() {
     navigate('/pageNotFound');
