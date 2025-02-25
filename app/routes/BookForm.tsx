@@ -1,4 +1,4 @@
-// src/BookForm.tsx
+import BookList from "./BookList";
 import React, { useState } from "react";
 import axios from "axios";
 
@@ -48,7 +48,7 @@ const BookForm: React.FC = () => {
   return (
     <div className="container mx-auto p-6">
       <h1 className="text-4xl font-extrabold text-center text-blue-600 mb-6">
-        Add New Book
+        Books
       </h1>
       <form
         onSubmit={handleSubmit}
@@ -132,6 +132,7 @@ const BookForm: React.FC = () => {
           </div>
         </div>
       )}
+      <BookList />
     </div>
   );
 };

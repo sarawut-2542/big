@@ -46,7 +46,7 @@ const myOrder = [
   },
 ];
 
-app.post("/addbookk", async (req, res) => {
+app.post("/addbook", async (req, res) => {
   const { bookTitle, bookDesc, bookAuthor } = req.body; // ดึงข้อมูลจาก JSON body
 
   if (!bookTitle || !bookDesc || !bookAuthor) {
@@ -97,32 +97,6 @@ app.get("/getbooks", async (req, res) => {
   }
 });
 
-const addBook = async () => {
-  const newBookRef = dbFirebase.collection("test-book").doc();
-  const bookRef = dbFirebase.collection("test-book").doc(newBookRef.id);
-  let objBook = {
-    bookId: newBookRef.id,
-    bookTitle: "test-title2",
-    bookDesc: "test-desc2",
-    bookAuthor: "Biggy",
-  };
-  await bookRef.set(objBook);
-  console.log(`Book added... ID: ${newBookRef.id}`);
-  return newBookRef.id; // คืนค่า ID ของหนังสือที่เพิ่ม
-};
-
-app.post("/addbook", async (req, res) => {
-  try {
-    const bookId = await addBook(); // รอให้ addBook() ทำงานเสร็จ
-    res
-      .status(200)
-      .json({ message: "Book added successfully", bookId: bookId }); // ส่งข้อมูลกลับไป
-  } catch (error) {
-    console.error("Error adding book:", error);
-    res.status(500).json({ message: "Failed to add book" }); // ส่งข้อผิดพลาดกลับ
-  }
-});
-
 app.get("/", (req, res) => {
   res.status(200).json({
     name: name,
@@ -150,6 +124,23 @@ app.get("/order/:ordid", (req, res) => {
     return objOrd.orderId == orderId;
   });
   res.send(result[0]);
+});
+
+app.delete("/deletebook/:bookId", async (req, res) => {
+  const bookId = req.params.bookId;
+  await dbFirebase.collection("test-book").doc(bookId).delete();
+  res.status(200).json({ message: "Book deleted successfully" });
+});
+
+app.put("/updatebook/:bookId", async (req, res) => {
+  const bookId = req.params.bookId;
+  const { bookTitle, bookDesc, bookAuthor } = req.body;
+  await dbFirebase.collection("test-book").doc(bookId).update({
+    bookTitle,
+    bookDesc,
+    bookAuthor,
+  });
+  res.status(200).json({ message: "Book updated successfully" });
 });
 
 app.listen(port, () => {
