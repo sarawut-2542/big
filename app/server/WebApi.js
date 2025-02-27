@@ -15,6 +15,18 @@ initializeApp({
 
 const dbFirebase = admin.firestore();
 
+console.log("กำลังเริ่มต้น Firebase..");
+dbFirebase
+  .collection("test-book")
+  .limit(1)
+  .get()
+  .then(() => {
+    console.log("Connect Firebase Firestore success");
+  })
+  .catch((error) => {
+    console.error("Connect Fail", error);
+  });
+
 const app = express();
 const port = 3030; //ทำการ ประกาศ port
 const name = "BIG";
